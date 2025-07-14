@@ -1,0 +1,120 @@
+        :root {
+            --cor-azul: #003366; /* Azul escuro */
+            --cor-verde: #4CAF50; /* Verde */
+            --cor-cinza: rgb(216, 214, 214); /* Cinza claro */
+            --cor-texto: #333;
+            --cor-texto-claro: #ffffff; /* Texto claro para contraste */
+            --sombra: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav {
+            margin-bottom: 20px;
+            background-color: var(--cor-cinza);
+            padding: 0;
+            box-shadow: var(--sombra);
+            width: 100px; /* Largura fixa para o menu */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: var(--cor-cinza);
+            min-width: 160px;
+            box-shadow: var(--sombra);
+            z-index: 1;
+            border-radius: 0 4px 4px 0;
+            border-left: 2px solid var(--cor-verde);
+        }
+
+        .dropdown li {
+            margin: 0;
+            width: 100%;
+        }
+
+        .dropdown a {
+            padding: 0.5rem 1rem;
+            white-space: nowrap;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu li:hover .dropdown {
+            display: block;
+            list-style: none;
+        }
+
+        .menu a {
+            color: var(--cor-azul);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+            display: block; /* Faz o link ocupar toda a área do li */
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button[type="button"] {
+            background-color: #f44336;
+            color: white;
+        }
+        #resposta {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }

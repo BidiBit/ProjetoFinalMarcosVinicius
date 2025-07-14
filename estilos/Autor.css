@@ -1,0 +1,233 @@
+/* Importando fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap');
+
+/* Variáveis CSS */
+:root {
+    --cor-azul: #003366; /* Azul escuro */
+    --cor-verde: #4CAF50; /* Verde */
+    --cor-bege: #f5f5dc; /* Bege */
+    --cor-texto: #333;
+    --cor-texto-claro: #ffffff; /* Texto claro para contraste */
+    --sombra: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--cor-texto);
+    background-color: var(--cor-bege);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+}
+
+/* Layout principal */
+header {
+    background-color: var(--cor-azul);
+    color: var(--cor-texto-claro);
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 3px solid var(--cor-verde);
+    grid-column: 1 / -1;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; /* Diminuição do tamanho da fonte */
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.15rem; /* Diminuição do tamanho da fonte */
+}
+
+/* NAV - Vertical e ocupando toda a altura */
+nav {
+    background-color: var(--cor-bege);
+    padding: 1rem;
+    box-shadow: var(--sombra);
+    width: 200px; /* Largura fixa para o menu */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 1rem 0;
+}
+
+.menu a {
+    color: var(--cor-azul);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    display: block; /* Faz o link ocupar toda a área do li */
+}
+
+.menu a:hover {
+    color: var(--cor-verde);
+}
+
+.menu a::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--cor-verde);
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 70%;
+}
+
+/* Dropdown styles */
+.dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: var(--cor-bege);
+    min-width: 160px;
+    box-shadow: var(--sombra);
+    z-index: 1;
+    border-radius: 0 4px 4px 0;
+    border-left: 2px solid var(--cor-verde);
+}
+
+.dropdown li {
+    margin: 0;
+    width: 100%;
+}
+
+.dropdown a {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li:hover .dropdown {
+    display: block;
+    list-style: none;
+}
+
+/* MAIN CONTENT - Centralizado mas ocupando toda largura disponível */
+main {
+    padding: 1rem; /* Espaço para o menu lateral */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-self: center;
+}
+
+/* Estilos para figuras */
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+figcaption {
+    font-size: 0.95rem; /* Diminuição do tamanho da fonte */
+    color: var(--cor-texto);
+    margin-top: 0.5rem;
+}
+
+/* ASIDE - Estilizado */
+aside {
+    background-color: var(--cor-bege);
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    border-left: 4px solid var(--cor-verde);
+}
+
+aside h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--cor-azul);
+    margin-bottom: 1rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--cor-azul);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 3px solid var(--cor-verde);
+    grid-column: 1 / -1;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+    
+    header {
+        padding: 1rem;
+    }
+
+    nav {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .dropdown {
+        position: static;
+        display: none;
+        border-left: none;
+        border-top: 2px solid var(--cor-verde);
+        border-radius: 0 0 4px 4px;
+    }
+
+    main {
+        padding: 1rem 2rem;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Media query para telas de no mínimo 992px */
+@media (min-width: 992px) {
+    h1 {
+        font-size: 2.3rem; /* Ajuste do tamanho da fonte */
+    }
+
+    .subtitle {
+        font-size: 1.1rem; /* Ajuste do tamanho da fonte */
+    }
+
+    figcaption {
+        font-size: 1rem; /* Ajuste do tamanho da fonte */
+    }
+}
